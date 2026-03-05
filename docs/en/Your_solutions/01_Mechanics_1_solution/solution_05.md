@@ -1,32 +1,6 @@
 
 # Solution: Variable Velocity
 
-## Useful formulas
-
-Before solving the problem, recall the fundamental relations between **position**, **velocity**, and **acceleration**.
-
-1. **Velocity is the derivative of position**
-
-$$
-v(t)=\frac{dx}{dt}
-$$
-
-2. **Acceleration is the derivative of velocity**
-
-$$
-a(t)=\frac{dv}{dt}
-$$
-
-3. **Position is obtained by integrating velocity**
-
-$$
-x(t)=\int v(t),dt
-$$
-
-If the **initial condition** $x(0)$ is known, we can determine the integration constant.
-
----
-
 # Step 1 — Given velocity
 
 The velocity is
@@ -171,6 +145,3 @@ $$
 a(3)=8
 $$
 
----
-
-If you want, I can also give you a **cleaner GitHub-ready version (without commentary, just derivation)** which tends to look nicer in course repositories.
