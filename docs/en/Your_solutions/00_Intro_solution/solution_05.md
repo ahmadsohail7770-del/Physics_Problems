@@ -1,53 +1,176 @@
-```python
-import math
+# Task 05 – Vector Components in Trigonometry
 
-magnitude = 15
-angle_degrees = 60
-angle_radians = math.radians(angle_degrees)
+## Problem Statement
 
-horizontal_component = magnitude * math.cos(angle_radians)
-vertical_component = magnitude * math.sin(angle_radians)
+A vector $\vec{A}$ has a magnitude of $15$ and forms an angle of $\theta = 60^\circ$ with the horizontal axis.
 
-print(f"{horizontal_component=}")
-print(f"{vertical_component=}")
+Determine the horizontal and vertical components of the vector.
 
+---
 
-```
+## Theory
 
-```text
-horizontal_component=7.500000000000002
-vertical_component=12.990381056766578
+A vector represents a quantity that has both magnitude (size) and direction.
+In a two–dimensional coordinate system, any vector can be separated into two perpendicular components:
 
+* a **horizontal component** along the $x$-axis
+* a **vertical component** along the $y$-axis
 
-```
+This process is called **vector decomposition**.
 
-To calculate the horizontal ($A_x$) and vertical ($A_y$) components of a vector $\vec{A}$ with magnitude $A = 15$ at an angle $\theta = 60^\circ$, we use the following trigonometric relationships:
+When a vector with magnitude $A$ makes an angle $\theta$ with the horizontal axis, the vector forms a right triangle with its components.
 
-$$A_x = A \cos(\theta)$$
+In this triangle:
 
-$$A_y = A \sin(\theta)$$
+* the **hypotenuse** represents the vector magnitude $A$
+* the **adjacent side** represents the horizontal component $A_x$
+* the **opposite side** represents the vertical component $A_y$
 
-### 1. Horizontal Component ($A_x$)
+Trigonometric functions relate these sides.
 
-$$A_x = 15 \cos(60^\circ)$$
+The cosine function gives the ratio between the adjacent side and the hypotenuse.
 
+$$
+\cos \theta = \frac{\text{adjacent}}{\text{hypotenuse}}
+$$
 
-Since $\cos(60^\circ) = 0.5$:
+Multiplying both sides by $A$ gives the horizontal component.
 
+$$
+A_x = A \cos \theta
+$$
 
-$$A_x = 15 \times 0.5 = 7.5$$
+The sine function gives the ratio between the opposite side and the hypotenuse.
 
-### 2. Vertical Component ($A_y$)
+$$
+\sin \theta = \frac{\text{opposite}}{\text{hypotenuse}}
+$$
 
-$$A_y = 15 \sin(60^\circ)$$
+Multiplying both sides by $A$ gives the vertical component.
 
+$$
+A_y = A \sin \theta
+$$
 
-Since $\sin(60^\circ) = \frac{\sqrt{3}}{2} \approx 0.866$:
+These two formulas allow any vector in two dimensions to be expressed in terms of its horizontal and vertical contributions.
 
+---
 
-$$A_y = 15 \times 0.866 \approx 12.99$$
+## Step-by-Step Solution
 
-**Final Result:**
+### Step 1 — Identify Known Quantities
 
-* The horizontal component is $7.5$.
-* The vertical component is approximately $12.99$.
+The given quantities are
+
+$$
+A = 15
+$$
+
+$$
+\theta = 60^\circ
+$$
+
+---
+
+### Step 2 — Compute the Horizontal Component
+
+The horizontal component is calculated using the cosine function.
+
+$$
+A_x = A \cos \theta
+$$
+
+Substitute the known values.
+
+$$
+A_x = 15 \cos 60^\circ
+$$
+
+The trigonometric value of cosine for $60^\circ$ is
+
+$$
+\cos 60^\circ = \frac{1}{2}
+$$
+
+Substitute this value.
+
+$$
+A_x = 15 \times \frac{1}{2}
+$$
+
+$$
+A_x = 7.5
+$$
+
+---
+
+### Step 3 — Compute the Vertical Component
+
+The vertical component is calculated using the sine function.
+
+$$
+A_y = A \sin \theta
+$$
+
+Substitute the known values.
+
+$$
+A_y = 15 \sin 60^\circ
+$$
+
+The trigonometric value of sine for $60^\circ$ is
+
+$$
+\sin 60^\circ = \frac{\sqrt{3}}{2}
+$$
+
+Substitute this value.
+
+$$
+A_y = 15 \times \frac{\sqrt{3}}{2}
+$$
+
+$$
+A_y = 7.5\sqrt{3}
+$$
+
+The approximate numerical value is
+
+$$
+A_y \approx 7.5 \times 1.732
+$$
+
+$$
+A_y \approx 12.99
+$$
+
+---
+
+## Final Result
+
+The horizontal component of the vector is
+
+$$
+A_x = 7.5
+$$
+
+The vertical component of the vector is
+
+$$
+A_y = 7.5\sqrt{3} \approx 12.99
+$$
+
+---
+
+## Interpretation
+
+The original vector has a magnitude of $15$ and points upward at an angle of $60^\circ$ from the horizontal.
+
+By decomposing the vector:
+
+* $A_x = 7.5$ represents how much of the vector acts **horizontally**
+* $A_y \approx 12.99$ represents how much of the vector acts **vertically upward**
+
+Because the angle is relatively large ($60^\circ$), the vertical component is larger than the horizontal component. This indicates that the vector points more strongly upward than it does horizontally.
+
+Together, these two perpendicular components combine to form the original vector of magnitude $15$ and direction $60^\circ$.
