@@ -1,43 +1,98 @@
-To rearrange the formula for the period of a simple pendulum to solve for the acceleration due to gravity ($g$), follow these algebraic steps:
+# Task 04 – Rearranging the Pendulum Period Formula
 
-### 1. Start with the original formula:
+## Problem Statement
 
-$$T = 2\pi \sqrt{\frac{L}{g}}$$
+The formula for the period of a simple pendulum is
 
-### 2. Isolate the square root:
+$$
+T = 2\pi \sqrt{\frac{L}{g}}
+$$
 
-Divide both sides of the equation by $2\pi$:
+Rearrange the equation to obtain a formula for the acceleration due to gravity $g$.
 
+---
 
-$$\frac{T}{2\pi} = \sqrt{\frac{L}{g}}$$
+## Theory
 
-### 3. Remove the square root:
+A **simple pendulum** is a weight attached to a string that swings back and forth.
 
-Square both sides of the equation:
+The **period** $T$ is the time it takes for the pendulum to complete one full swing.
 
+The formula
 
-$$\left( \frac{T}{2\pi} \right)^2 = \frac{L}{g}$$
+$$
+T = 2\pi \sqrt{\frac{L}{g}}
+$$
 
-This simplifies to:
+shows that the period depends on:
 
+* $L$, the length of the pendulum
+* $g$, the acceleration due to gravity
 
-$$\frac{T^2}{4\pi^2} = \frac{L}{g}$$
+To find $g$, we need to rearrange this formula. Rearranging means solving the equation so that $g$ is alone on one side. This is done by using basic algebra: squaring, multiplying, and dividing.
 
-### 4. Solve for $g$:
+---
 
-Multiply both sides by $g$ to move it out of the denominator:
+## Step-by-Step Solution
 
+### Step 1 — Remove the Square Root
 
-$$g \cdot \frac{T^2}{4\pi^2} = L$$
+Square both sides to get rid of the square root:
 
-Finally, multiply both sides by $\frac{4\pi^2}{T^2}$ (the reciprocal) to isolate $g$:
+$$
+T^2 = (2\pi)^2 \frac{L}{g}
+$$
 
+---
 
-$$g = \frac{4\pi^2 L}{T^2}$$
+### Step 2 — Simplify $(2\pi)^2$
 
-### Final Formula:
+$$
+(2\pi)^2 = 4\pi^2
+$$
 
-The formula for the acceleration due to gravity is:
+So the equation becomes
 
+$$
+T^2 = 4\pi^2 \frac{L}{g}
+$$
 
-$$g = \frac{4\pi^2 L}{T^2}$$
+---
+
+### Step 3 — Multiply Both Sides by $g$
+
+$$
+g T^2 = 4\pi^2 L
+$$
+
+---
+
+### Step 4 — Divide Both Sides by $T^2$
+
+$$
+g = \frac{4\pi^2 L}{T^2}
+$$
+
+---
+
+## Final Result
+
+The formula for gravitational acceleration is
+
+$$
+g = \frac{4\pi^2 L}{T^2}
+$$
+
+---
+
+## Interpretation
+
+This formula shows how gravity can be calculated from a pendulum:
+
+* A longer pendulum ($L$ larger) gives a larger numerator, so $g$ becomes larger if $T$ is constant.
+* A longer period ($T$ larger) increases the denominator, so $g$ becomes smaller.
+* $4\pi^2$ is just a constant from the mathematics of circular motion.
+
+In simple terms: **if you know how long the pendulum is and how long it takes to swing, you can calculate the gravity $g$.**
+
+This is exactly how physics experiments measure gravity using a pendulum.
