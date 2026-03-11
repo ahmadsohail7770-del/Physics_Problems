@@ -1,81 +1,118 @@
-```python
-import sympy
+# Task 02 – Solving a System of Linear Equations
 
-x, y = sympy.symbols('x y')
-eq1 = sympy.Eq(2*x + 3*y, 12)
-eq2 = sympy.Eq(x - y, 1)
+## Problem Statement
 
-solution = sympy.solve((eq1, eq2), (x, y))
-print(solution)
+Find the values of $x$ and $y$ that satisfy the simultaneous equations:
 
+$$
+2x + 3y = 12
+$$
 
-```
+$$
+x - y = 1
+$$
 
-```text
-{x: 3, y: 2}
+---
 
+## Theory
 
-```
+A **system of linear equations** is a set of two or more equations with the same variables. A solution to the system is a set of values for the variables that satisfies all equations simultaneously.
 
-To find the values of $x$ and $y$ that satisfy the system of equations:
+Two common methods to solve systems of two equations are:
 
-1. $2x + 3y = 12$
-2. $x - y = 1$
+1. **Substitution Method**: Solve one equation for one variable and substitute into the other equation.
+2. **Elimination Method**: Combine the equations to eliminate one variable, then solve for the other.
 
-### Method 1: Substitution
+The solution is usually a point $(x, y)$ where the two lines intersect in the Cartesian plane.
 
-From equation (2), we can express $x$ in terms of $y$:
+---
 
+## Step-by-Step Solution
 
-$$x = y + 1$$
+### Step 1 — Solve one equation for one variable
 
-Now, substitute this expression for $x$ into equation (1):
+From the second equation:
 
+$$
+x - y = 1
+$$
 
-$$2(y + 1) + 3y = 12$$
+Solve for $x$:
 
-Distribute and simplify:
+$$
+x = y + 1
+$$
 
+---
 
-$$2y + 2 + 3y = 12$$
+### Step 2 — Substitute into the first equation
 
-$$5y + 2 = 12$$
+Substitute $x = y + 1$ into the first equation:
 
-$$5y = 10$$
+$$
+2x + 3y = 12
+$$
 
-$$y = 2$$
+$$
+2(y + 1) + 3y = 12
+$$
 
-Now substitute $y = 2$ back into the expression for $x$:
+---
 
+### Step 3 — Simplify and solve for $y$
 
-$$x = 2 + 1$$
+Expand:
 
-$$x = 3$$
+$$
+2y + 2 + 3y = 12
+$$
 
-### Method 2: Elimination
+Combine like terms:
 
-Multiply equation (2) by 3 to align the $y$ terms:
+$$
+5y + 2 = 12
+$$
 
+Subtract 2 from both sides:
 
-$$3(x - y) = 3(1)$$
+$$
+5y = 10
+$$
 
-$$3x - 3y = 3$$
+Divide both sides by 5:
 
-Now, add this to equation (1):
+$$
+y = 2
+$$
 
+---
 
-$$(2x + 3y) + (3x - 3y) = 12 + 3$$
+### Step 4 — Solve for $x$
 
-$$5x = 15$$
+Substitute $y = 2$ into $x = y + 1$:
 
-$$x = 3$$
+$$
+x = 2 + 1
+$$
 
-Substitute $x = 3$ into equation (2):
+$$
+x = 3
+$$
 
+---
 
-$$3 - y = 1$$
+## Final Result
 
-$$y = 2$$
+The solution to the system of equations is
 
-**Solution:**
-The values that satisfy both equations are $x = 3$ and $y = 2$.
+$$
+x = 3, \quad y = 2
+$$
+
+---
+
+## Interpretation
+
+The values $x = 3$ and $y = 2$ satisfy **both equations simultaneously**, meaning that the two lines represented by the equations intersect at the point $(3, 2)$ on the Cartesian plane.
+
+This is the unique solution for this system of linear equations.

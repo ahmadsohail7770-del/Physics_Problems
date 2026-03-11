@@ -1,93 +1,284 @@
-```python
-import numpy as np
+# Task 01 – Vector Algebra in 3D
 
-# Define vectors
-a = np.array([2, 1, -3])
-b = np.array([4, -2, 1])
+## Problem Statement
 
-# a) Magnitudes
-mag_a = np.linalg.norm(a)
-mag_b = np.linalg.norm(b)
+Given two vectors in 3D space:
 
-# b) Dot product
-dot_product = np.dot(a, b)
+$$
+\vec{a} = [2, 1, -3], \quad \vec{b} = [4, -2, 1]
+$$
 
-# c) Cross product
-cross_product = np.cross(a, b)
+Calculate:
 
-# d) Angle
-cos_theta = dot_product / (mag_a * mag_b)
-angle_rad = np.arccos(cos_theta)
-angle_deg = np.degrees(angle_rad)
+a) The magnitude of each vector.
 
-print(f"{mag_a=}")
-print(f"{mag_b=}")
-print(f"{dot_product=}")
-print(f"{cross_product=}")
-print(f"{angle_rad=}")
-print(f"{angle_deg=}")
+b) The dot product $\vec{a} \cdot \vec{b}$.
 
+c) The cross product $\vec{a} \times \vec{b}$.
 
+d) The angle between the vectors $\vec{a}$ and $\vec{b}$.
 
-```
+---
 
-```text
-mag_a=3.7416573867739413
-mag_b=4.58257569495584
-dot_product=3
-cross_product=array([ -5, -14,  -8])
-angle_rad=1.3949275767021716
-angle_deg=79.92346287144585
+## Theory
 
+**Vectors in 3D space** have both magnitude and direction, represented by three components along the $x$, $y$, and $z$ axes.
 
-```
+Key concepts:
 
-To calculate the properties of the vectors $\vec{a} = [2, 1, -3]$ and $\vec{b} = [4, -2, 1]$, we follow these steps:
+1. **Magnitude of a vector** $\vec{v} = [v_x, v_y, v_z]$:
 
-### a) Magnitude of each vector
+$$
+|\vec{v}| = \sqrt{v_x^2 + v_y^2 + v_z^2}
+$$
 
-The magnitude of a vector $\vec{v} = [x, y, z]$ is given by $|\vec{v}| = \sqrt{x^2 + y^2 + z^2}$.
+2. **Dot product** of two vectors $\vec{a}$ and $\vec{b}$:
 
-* **Magnitude of $\vec{a}$:**
+$$
+\vec{a} \cdot \vec{b} = a_x b_x + a_y b_y + a_z b_z
+$$
 
-$$|\vec{a}| = \sqrt{2^2 + 1^2 + (-3)^2} = \sqrt{4 + 1 + 9} = \sqrt{14} \approx 3.742$$
+The dot product is also related to the angle $\theta$ between the vectors:
 
+$$
+\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \theta
+$$
 
-* **Magnitude of $\vec{b}$:**
+3. **Cross product** of two vectors $\vec{a}$ and $\vec{b}$:
 
-$$|\vec{b}| = \sqrt{4^2 + (-2)^2 + 1^2} = \sqrt{16 + 4 + 1} = \sqrt{21} \approx 4.583$$
+The cross product produces a vector perpendicular to both $\vec{a}$ and $\vec{b}$, with magnitude
 
+$$
+|\vec{a} \times \vec{b}| = |\vec{a}| |\vec{b}| \sin \theta
+$$
 
+and direction given by the right-hand rule.
 
-### b) Dot Product $\vec{a} \cdot \vec{b}$
+The formula for the cross product in 3D is:
 
-The dot product is the sum of the products of the corresponding components:
+$$
+\vec{a} \times \vec{b} =
+\begin{pmatrix}
+a_y b_z - a_z b_y \
+a_z b_x - a_x b_z \
+a_x b_y - a_y b_x
+\end{pmatrix}
+$$
 
+4. **Angle between vectors**:
 
-$$\vec{a} \cdot \vec{b} = (2)(4) + (1)(-2) + (-3)(1)$$
+$$
+\theta = \arccos \left( \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|} \right)
+$$
 
-$$\vec{a} \cdot \vec{b} = 8 - 2 - 3 = 3$$
+---
 
-### c) Cross Product $\vec{a} \times \vec{b}$
+## Step-by-Step Solution
 
-The cross product is calculated using the determinant of a $3 \times 3$ matrix:
+### Step 1 — Magnitude of Each Vector
 
+For $\vec{a} = [2, 1, -3]$:
 
-$$\vec{a} \times \vec{b} = \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\ 2 & 1 & -3 \\ 4 & -2 & 1 \end{vmatrix}$$
+$$
+|\vec{a}| = \sqrt{2^2 + 1^2 + (-3)^2}
+$$
 
-$$\vec{a} \times \vec{b} = \mathbf{i}(1(1) - (-3)(-2)) - \mathbf{j}(2(1) - (-3)(4)) + \mathbf{k}(2(-2) - 1(4))$$
+$$
+|\vec{a}| = \sqrt{4 + 1 + 9}
+$$
 
-$$\vec{a} \times \vec{b} = \mathbf{i}(1 - 6) - \mathbf{j}(2 + 12) + \mathbf{k}(-4 - 4)$$
+$$
+|\vec{a}| = \sqrt{14} \approx 3.742
+$$
 
-$$\vec{a} \times \vec{b} = [-5, -14, -8]$$
+For $\vec{b} = [4, -2, 1]$:
 
-### d) Angle between vectors $\vec{a}$ and $\vec{b}$
+$$
+|\vec{b}| = \sqrt{4^2 + (-2)^2 + 1^2}
+$$
 
-The angle $\theta$ is found using the dot product formula: $\vec{a} \cdot \vec{b} = |\vec{a}| |\vec{b}| \cos \theta$.
+$$
+|\vec{b}| = \sqrt{16 + 4 + 1}
+$$
 
+$$
+|\vec{b}| = \sqrt{21} \approx 4.583
+$$
 
-$$\cos \theta = \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|} = \frac{3}{\sqrt{14}\sqrt{21}} = \frac{3}{\sqrt{294}}$$
+---
 
-$$\cos \theta \approx \frac{3}{17.146} \approx 0.175$$
+### Step 2 — Dot Product
 
-$$\theta = \arccos(0.175) \approx 1.395 \text{ radians or } 79.92^\circ$$
+$$
+\vec{a} \cdot \vec{b} = (2)(4) + (1)(-2) + (-3)(1)
+$$
+
+$$
+\vec{a} \cdot \vec{b} = 8 - 2 - 3
+$$
+
+$$
+\vec{a} \cdot \vec{b} = 3
+$$
+
+---
+
+### Step 3 — Cross Product (Detailed)
+
+The cross product formula is:
+
+$$
+\vec{a} \times \vec{b} =
+\begin{pmatrix}
+a_y b_z - a_z b_y \
+a_z b_x - a_x b_z \
+a_x b_y - a_y b_x
+\end{pmatrix}
+$$
+
+Substitute the components of $\vec{a} = [2, 1, -3]$ and $\vec{b} = [4, -2, 1]$:
+
+1. **x-component**:
+
+$$
+(\vec{a} \times \vec{b})_x = a_y b_z - a_z b_y
+$$
+
+$$
+= (1)(1) - (-3)(-2)
+$$
+
+$$
+= 1 - 6
+$$
+
+$$
+= -5
+$$
+
+2. **y-component**:
+
+$$
+(\vec{a} \times \vec{b})_y = a_z b_x - a_x b_z
+$$
+
+$$
+= (-3)(4) - (2)(1)
+$$
+
+$$
+= -12 - 2
+$$
+
+$$
+= -14
+$$
+
+3. **z-component**:
+
+$$
+(\vec{a} \times \vec{b})_z = a_x b_y - a_y b_x
+$$
+
+$$
+= (2)(-2) - (1)(4)
+$$
+
+$$
+= -4 - 4
+$$
+
+$$
+= -8
+$$
+
+Thus, the cross product vector is:
+
+$$
+\vec{a} \times \vec{b} = [-5, -14, -8]
+$$
+
+**Magnitude of cross product**:
+
+$$
+|\vec{a} \times \vec{b}| = \sqrt{(-5)^2 + (-14)^2 + (-8)^2}
+$$
+
+$$
+|\vec{a} \times \vec{b}| = \sqrt{25 + 196 + 64}
+$$
+
+$$
+|\vec{a} \times \vec{b}| = \sqrt{285} \approx 16.881
+$$
+
+---
+
+### Step 4 — Angle Between Vectors
+
+The angle $\theta$ is given by
+
+$$
+\theta = \arccos \left( \frac{\vec{a} \cdot \vec{b}}{|\vec{a}| |\vec{b}|} \right)
+$$
+
+Substitute values:
+
+$$
+\theta = \arccos \left( \frac{3}{\sqrt{14} \cdot \sqrt{21}} \right)
+$$
+
+$$
+\theta = \arccos \left( \frac{3}{\sqrt{294}} \right)
+$$
+
+$$
+\theta = \arccos \left( \frac{3}{17.146} \right)
+$$
+
+$$
+\theta \approx \arccos(0.175)
+$$
+
+$$
+\theta \approx 80.0^\circ
+$$
+
+---
+
+## Final Result
+
+* Magnitudes:
+
+$$
+|\vec{a}| = \sqrt{14} \approx 3.742, \quad |\vec{b}| = \sqrt{21} \approx 4.583
+$$
+
+* Dot product:
+
+$$
+\vec{a} \cdot \vec{b} = 3
+$$
+
+* Cross product:
+
+$$
+\vec{a} \times \vec{b} = [-5, -14, -8], \quad |\vec{a} \times \vec{b}| \approx 16.881
+$$
+
+* Angle between vectors:
+
+$$
+\theta \approx 80.0^\circ
+$$
+
+---
+
+## Interpretation
+
+* The **magnitudes** represent the lengths of the vectors in 3D space.
+* The **dot product** indicates a small positive correlation; vectors are almost perpendicular.
+* The **cross product** gives a vector perpendicular to both $\vec{a}$ and $\vec{b}$, with magnitude showing the area of the parallelogram formed by the two vectors.
+* The **angle** of approximately $80^\circ$ confirms that the vectors are nearly orthogonal but not exactly at right angles.
+
+The detailed cross product steps clarify how each component is calculated and why the resulting vector points perpendicular to the plane containing $\vec{a}$ and $\vec{b}$.
